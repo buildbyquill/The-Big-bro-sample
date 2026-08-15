@@ -1,0 +1,219 @@
+---
+import Mascot from './Mascot.astro';
+---
+
+<section class="section visit" id="visit">
+  <div class="container visit__inner">
+    <div class="visit__info">
+      <p class="section-label">Visit / Order</p>
+      <h2 class="section-title">Come for the coffee, stay for the cake.</h2>
+
+      <ul class="visit__list">
+        <li class="visit__item">
+          <span class="visit__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z" />
+              <circle cx="12" cy="10" r="2.6" />
+            </svg>
+          </span>
+          <div>
+            <span class="visit__label">Address</span>
+            <span class="visit__value">SCO-352, Sector 9, Panchkula, Haryana 134109</span>
+          </div>
+        </li>
+
+        <li class="visit__item">
+          <span class="visit__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 3" />
+            </svg>
+          </span>
+          <div>
+            <span class="visit__label">Hours</span>
+            <span class="visit__value">Open daily · 9:30 AM – 11:45 PM</span>
+          </div>
+        </li>
+
+        <li class="visit__item">
+          <span class="visit__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 4h4l1.5 5-2 1.5a12 12 0 0 0 4 4l1.5-2 5 1.5v4a2 2 0 0 1-2 2A16 16 0 0 1 4 6a2 2 0 0 1 2-2z" />
+            </svg>
+          </span>
+          <div>
+            <span class="visit__label">Call to order</span>
+            <span class="visit__value">
+              <a href="tel:+919779665544">+91 97796 65544</a>
+              <span class="visit__sep">·</span>
+              <a href="tel:+911726671027">+91 172 667 1027</a>
+            </span>
+          </div>
+        </li>
+
+        <li class="visit__item">
+          <span class="visit__icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="16" rx="4" />
+              <path d="M7 9h10 M7 13h7" />
+              <path d="M16.5 17h.01" />
+            </svg>
+          </span>
+          <div>
+            <span class="visit__label">Instagram</span>
+            <span class="visit__value">
+              <a href="https://instagram.com/thebigbropanchkula" rel="noopener" target="_blank">@thebigbropanchkula</a>
+            </span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="visit__cta">
+        <a class="btn btn--primary" href="tel:+919779665544">Order Now</a>
+        <Mascot class="visit__mascot" showWordmark={false} />
+      </div>
+    </div>
+
+    <div class="visit__map" aria-label="Map placeholder — SCO-352, Sector 9, Panchkula">
+      <svg class="visit__map-pin" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z" />
+        <circle cx="12" cy="10" r="2.6" />
+      </svg>
+      <p class="visit__map-title">SCO-352, Sector 9</p>
+      <p class="visit__map-sub">Panchkula · Haryana · 134109</p>
+      <span class="visit__map-note">Interactive map embed — add client link here</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .visit__inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: center;
+  }
+
+  .visit__list {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .visit__item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .visit__icon {
+    display: inline-grid;
+    place-items: center;
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 50%;
+    background: var(--cream-deep);
+    color: var(--maroon);
+    flex-shrink: 0;
+  }
+
+  .visit__icon svg {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .visit__label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--charcoal-soft);
+  }
+
+  .visit__value {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--charcoal);
+  }
+
+  .visit__value a:hover {
+    color: var(--maroon);
+  }
+
+  .visit__sep {
+    opacity: 0.4;
+    margin-inline: 0.35rem;
+  }
+
+  .visit__cta {
+    margin-top: 2.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+  }
+
+  .visit__mascot {
+    width: 3.6rem;
+    height: 3.6rem;
+    opacity: 0.9;
+  }
+
+  .visit__map {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-lg);
+    border: 2px dashed var(--maroon-soft);
+    background:
+      radial-gradient(80% 80% at 75% 20%, var(--cream-light) 0%, transparent 60%),
+      var(--cream-deep);
+    display: grid;
+    place-content: center;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .visit__map-pin {
+    width: 3.4rem;
+    height: 3.4rem;
+    color: var(--maroon);
+    margin: 0 auto;
+  }
+
+  .visit__map-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--charcoal);
+    margin-top: 0.8rem;
+  }
+
+  .visit__map-sub {
+    color: var(--charcoal-soft);
+    font-size: 0.95rem;
+  }
+
+  .visit__map-note {
+    position: absolute;
+    bottom: 0.9rem;
+    left: 0;
+    right: 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--maroon);
+    opacity: 0.75;
+  }
+
+  @media (max-width: 900px) {
+    .visit__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .visit__map {
+      order: -1;
+    }
+  }
+</style>

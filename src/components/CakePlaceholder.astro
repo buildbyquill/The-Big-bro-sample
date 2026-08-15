@@ -1,0 +1,78 @@
+---
+interface Props {
+  class?: string;
+  gradient: string;
+  flavour: string;
+}
+
+const { class: className = '', gradient, flavour } = Astro.props;
+---
+
+<div class={['cake-ph', className].join(' ')} style={`--cake-grad: ${gradient}`}>
+  <svg
+    class="cake-ph__art"
+    viewBox="0 0 96 96"
+    aria-hidden="true"
+    fill="none"
+    stroke="var(--cream, #f7f0e3)"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M 14 78 L 82 78 L 74 44 L 22 44 Z" opacity="0.9" />
+    <path d="M 22 44 L 74 44 L 70 30 L 26 30 Z" opacity="0.7" />
+    <circle cx="40" cy="20" r="6" opacity="0.85" />
+    <circle cx="56" cy="20" r="6" opacity="0.85" />
+    <path d="M 22 61 L 74 61" stroke-dasharray="3 4" opacity="0.7" />
+    <path d="M 48 30 L 48 24" opacity="0.6" />
+  </svg>
+  <span class="cake-ph__flavour">{flavour}</span>
+  <span class="cake-ph__note">Photo from client · placeholder</span>
+</div>
+
+<style>
+  .cake-ph {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-md);
+    background:
+      radial-gradient(120% 120% at 85% 10%, rgba(255, 255, 255, 0.35) 0%, transparent 55%),
+      var(--cake-grad);
+    border: 2px dashed rgba(255, 255, 255, 0.55);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+
+  .cake-ph__art {
+    width: 44%;
+    max-width: 7rem;
+    opacity: 0.95;
+  }
+
+  .cake-ph__flavour {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream-light);
+    background: rgba(43, 39, 36, 0.35);
+    padding: 0.35rem 0.7rem;
+    border-radius: var(--radius-pill);
+    backdrop-filter: blur(4px);
+  }
+
+  .cake-ph__note {
+    position: absolute;
+    bottom: 0.85rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--cream-light);
+    opacity: 0.85;
+  }
+</style>

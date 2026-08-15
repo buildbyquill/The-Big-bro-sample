@@ -1,0 +1,77 @@
+---
+---
+
+<section class="section story" id="story">
+  <div class="container story__inner">
+    <p class="story__label">The Story</p>
+    <blockquote class="story__quote">
+      “The Big Bro is an idea of viewing Bakery as an Art and not as a business.”
+    </blockquote>
+    <p class="story__byline">— Sahil Satija, Co-founder</p>
+    <p class="story__body">
+      A family venture built by four brothers, The Big Bro opened its first Panchkula
+      outlet as a studio for the craft — not a production line. The 2,000 sq. ft. space
+      was designed by the founders themselves, anchored by a standout coffee bar at its
+      heart. Everything since has followed that idea: bake it beautifully, or don’t bake it.
+    </p>
+  </div>
+</section>
+
+<style>
+  .story {
+    background:
+      radial-gradient(120% 90% at 12% 0%, var(--maroon-soft) 0%, transparent 55%),
+      var(--maroon-deep);
+    color: var(--cream-light);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .story::after {
+    content: '';
+    position: absolute;
+    right: -6rem;
+    bottom: -9rem;
+    width: 22rem;
+    height: 22rem;
+    border-radius: 50%;
+    border: 2px dashed rgba(247, 240, 227, 0.18);
+  }
+
+  .story__inner {
+    max-width: 46rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .story__label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .story__quote {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.7rem, 4vw, 2.8rem);
+    line-height: 1.25;
+    margin-top: 1.4rem;
+  }
+
+  .story__byline {
+    margin-top: 1.2rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--gold);
+  }
+
+  .story__body {
+    margin: 1.8rem auto 0;
+    max-width: 40rem;
+    color: rgba(247, 240, 227, 0.85);
+  }
+</style>

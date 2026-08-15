@@ -1,0 +1,153 @@
+---
+import CakePlaceholder from './CakePlaceholder.astro';
+
+const cakes = [
+  {
+    name: 'Golden Bloom',
+    tag: '2-Tier Vanilla',
+    desc: 'Vanilla layers finished with edible gold — the celebration cake that shines on the table.',
+    flavour: 'Vanilla · Edible gold',
+    gradient: 'linear-gradient(135deg, #f3e3b8 0%, #c99b3f 100%)',
+  },
+  {
+    name: 'Vintage Blush',
+    tag: 'Pink Rosé',
+    desc: 'A blush rosé cake wrapped in buttercream piping — soft, romantic and made to order.',
+    flavour: 'Rosé · Buttercream',
+    gradient: 'linear-gradient(135deg, #f6d6cd 0%, #c4707f 100%)',
+  },
+];
+---
+
+<section class="section signature" id="signature">
+  <div class="container">
+    <header class="signature__head">
+      <p class="section-label">Two Moods, One Celebration</p>
+      <h2 class="section-title">Cakes made for a mood,<br />not for a mass-market shelf.</h2>
+      <p class="section-sub">
+        Our live campaign — bespoke birthday cakes, eggless and baked fresh to order.
+        Every piece is designed as its own small work of art.
+      </p>
+    </header>
+
+    <div class="signature__grid">
+      {
+        cakes.map((cake) => (
+          <article class="cake">
+            <CakePlaceholder class="cake__ph" gradient={cake.gradient} flavour={cake.flavour} />
+            <div class="cake__body">
+              <div class="cake__meta">
+                <span class="cake__badge">Bespoke</span>
+                <span class="cake__tag">{cake.tag}</span>
+              </div>
+              <h3 class="cake__name">{cake.name}</h3>
+              <p class="cake__desc">{cake.desc}</p>
+              <div class="cake__cta">
+                <a class="btn btn--primary cake__btn" href="tel:+919779665544">Order</a>
+                <a class="btn btn--ghost cake__btn" href="https://instagram.com/thebigbropanchkula" rel="noopener" target="_blank">Enquire</a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <p class="signature__note">
+      Every cake eggless · baked fresh to order · customisation available
+    </p>
+  </div>
+</section>
+
+<style>
+  .signature__head {
+    margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  .signature__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .cake {
+    background: var(--cream-light);
+    border: 1px solid var(--cream-deep);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cake:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .cake__body {
+    padding: 1.5rem 1.6rem 1.7rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .cake__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cake__badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--maroon);
+    background: var(--cream-deep);
+    padding: 0.28rem 0.65rem;
+    border-radius: var(--radius-pill);
+  }
+
+  .cake__tag {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--charcoal-soft);
+  }
+
+  .cake__name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.65rem;
+    color: var(--charcoal);
+  }
+
+  .cake__desc {
+    margin-top: 0.55rem;
+    color: var(--charcoal-soft);
+    font-size: 0.98rem;
+  }
+
+  .cake__cta {
+    margin-top: 1.25rem;
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+  }
+
+  .cake__btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.92rem;
+  }
+
+  .signature__note {
+    margin-top: 2.2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--charcoal-soft);
+    opacity: 0.85;
+  }
+</style>

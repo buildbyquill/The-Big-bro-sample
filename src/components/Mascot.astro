@@ -1,0 +1,127 @@
+---
+interface Props {
+  class?: string;
+  showWordmark?: boolean;
+  ariaHidden?: boolean;
+}
+
+const { class: className = '', showWordmark = true, ariaHidden = true } = Astro.props;
+---
+
+<svg
+  class={className}
+  viewBox="0 0 320 320"
+  role="img"
+  {ariaHidden ? { 'aria-hidden': 'true' } : {}}
+  {!ariaHidden ? { 'aria-label': 'The Big Bro mascot — a bearded chef with a coffee cup' } : {}}
+>
+  <!-- backdrop -->
+  <circle cx="160" cy="160" r="150" fill="var(--cream-deep, #ede0c9)" />
+  <circle
+    cx="160"
+    cy="160"
+    r="150"
+    fill="none"
+    stroke="var(--maroon, #7a1f33)"
+    stroke-width="3"
+    opacity="0.4"
+    stroke-dasharray="2 9"
+    stroke-linecap="round"
+  />
+
+  <g>
+    <!-- shoulders / jacket -->
+    <path
+      d="M 104 200 Q 98 258 160 262 Q 222 258 216 200 Q 196 222 160 224 Q 124 222 104 200 Z"
+      fill="var(--white, #ffffff)"
+      stroke="var(--charcoal, #2b2724)"
+      stroke-width="3.5"
+    />
+    <!-- apron -->
+    <path
+      d="M 128 204 L 192 204 L 186 258 Q 160 264 134 258 Z"
+      fill="var(--maroon, #7a1f33)"
+    />
+    <path
+      d="M 148 226 L 172 226 L 169 252 Q 160 256 151 252 Z"
+      fill="none"
+      stroke="var(--gold, #c2923b)"
+      stroke-width="2.5"
+    />
+
+    <!-- chef hat -->
+    <path d="M 136 74 Q 136 52 160 48 Q 184 52 184 74 Q 172 68 160 68 Q 148 68 136 74 Z" fill="var(--white, #ffffff)" stroke="var(--charcoal, #2b2724)" stroke-width="3" />
+    <circle cx="144" cy="70" r="12" fill="var(--white, #ffffff)" stroke="var(--charcoal, #2b2724)" stroke-width="3" />
+    <circle cx="160" cy="58" r="15" fill="var(--white, #ffffff)" stroke="var(--charcoal, #2b2724)" stroke-width="3" />
+    <circle cx="176" cy="70" r="12" fill="var(--white, #ffffff)" stroke="var(--charcoal, #2b2724)" stroke-width="3" />
+    <rect x="132" y="80" width="56" height="15" rx="7" fill="var(--white, #ffffff)" stroke="var(--charcoal, #2b2724)" stroke-width="3" />
+
+    <!-- face -->
+    <circle cx="160" cy="142" r="46" fill="#ebc49a" stroke="var(--charcoal, #2b2724)" stroke-width="3" />
+    <circle cx="115" cy="140" r="6.5" fill="#ebc49a" stroke="var(--charcoal, #2b2724)" stroke-width="2.5" />
+    <circle cx="205" cy="140" r="6.5" fill="#ebc49a" stroke="var(--charcoal, #2b2724)" stroke-width="2.5" />
+
+    <!-- brows -->
+    <path d="M 138 118 Q 146 112 154 116" fill="none" stroke="var(--charcoal, #2b2724)" stroke-width="3" stroke-linecap="round" />
+    <path d="M 166 116 Q 174 112 182 118" fill="none" stroke="var(--charcoal, #2b2724)" stroke-width="3" stroke-linecap="round" />
+
+    <!-- eyes -->
+    <circle cx="146" cy="132" r="4.5" fill="var(--charcoal, #2b2724)" />
+    <circle cx="174" cy="132" r="4.5" fill="var(--charcoal, #2b2724)" />
+    <circle cx="147.5" cy="130.5" r="1.4" fill="var(--cream-light, #fbf7ef)" />
+    <circle cx="175.5" cy="130.5" r="1.4" fill="var(--cream-light, #fbf7ef)" />
+
+    <!-- nose -->
+    <ellipse cx="160" cy="148" rx="6.5" ry="5" fill="#dfaf7e" />
+
+    <!-- beard -->
+    <path
+      d="M 122 148 C 118 198 143 212 160 212 C 177 212 202 198 198 148 C 190 182 130 182 122 148 Z"
+      fill="#4a3b30"
+    />
+    <!-- smile -->
+    <path d="M 148 150 Q 160 160 172 150" fill="none" stroke="#f3dcc6" stroke-width="3" stroke-linecap="round" />
+
+    <!-- moustache -->
+    <path d="M 160 148 Q 148 140 134 148 Q 148 154 160 151 Z" fill="#4a3b30" />
+    <path d="M 160 148 Q 172 140 186 148 Q 172 154 160 151 Z" fill="#4a3b30" />
+
+    <!-- coffee cup -->
+    <path d="M 150 210 q 4 -8 -3 -14" fill="none" stroke="var(--charcoal, #2b2724)" stroke-width="2.5" stroke-linecap="round" />
+    <path d="M 163 210 q 4 -8 -3 -14" fill="none" stroke="var(--charcoal, #2b2724)" stroke-width="2.5" stroke-linecap="round" />
+    <rect x="143" y="212" width="30" height="22" rx="5" fill="var(--cream-light, #fbf7ef)" stroke="var(--charcoal, #2b2724)" stroke-width="3" />
+    <path d="M 173 218 h 6 a 4 4 0 0 1 0 10 h -6" fill="none" stroke="var(--charcoal, #2b2724)" stroke-width="3" />
+  </g>
+
+  {
+    showWordmark && (
+      <g>
+        <text
+          x="160"
+          y="290"
+          text-anchor="middle"
+          font-family="var(--font-display), Georgia, serif"
+          font-size="26"
+          font-weight="700"
+          letter-spacing="4"
+          fill="var(--maroon, #7a1f33)"
+        >
+          THE BIG BRO
+        </text>
+        <text
+          x="160"
+          y="305"
+          text-anchor="middle"
+          font-family="var(--font-body), sans-serif"
+          font-size="9"
+          font-weight="600"
+          letter-spacing="3"
+          fill="var(--charcoal-soft, #5a534d)"
+          opacity="0.65"
+        >
+          BAKERY · CAFE · PATISSERIE
+        </text>
+      </g>
+    )
+  }
+</svg>

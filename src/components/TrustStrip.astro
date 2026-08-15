@@ -1,0 +1,136 @@
+---
+const chips = [
+  { label: 'Women-owned', icon: 'woman' },
+  { label: '₹400–1,200 for two', icon: 'rupee' },
+  { label: 'Open daily · ~9:30 AM – 11:45 PM', icon: 'clock' },
+];
+---
+
+<div class="trust" aria-label="Ratings and facts">
+  <div class="trust__inner container">
+    <div class="trust__rating">
+      <span class="trust__score">4.2</span>
+      <span class="trust__stars" aria-hidden="true">★★★★<span class="trust__star-ghost">★</span></span>
+      <span class="trust__reviews">1,900+ Google reviews</span>
+    </div>
+
+    <div class="trust__chips">
+      {chips.map((c) => (
+        <span class="trust__chip">
+          <svg class="trust__icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            {c.icon === 'woman' && (
+              <>
+                <circle cx="12" cy="7" r="4" />
+                <path d="M12 11 v5" />
+                <path d="M7 21 l1.6-4 h6.8 L17 21" />
+                <path d="M9.5 16 h5" />
+              </>
+            )}
+            {c.icon === 'rupee' && (
+              <>
+                <path d="M6 4 h12" />
+                <path d="M6 8 h12" />
+                <path d="M6 4 c0 0 0 10 8 10" />
+                <path d="M6 8 l8 12" />
+              </>
+            )}
+            {c.icon === 'clock' && (
+              <>
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7 v5 l3 3" />
+              </>
+            )}
+          </svg>
+          {c.label}
+        </span>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .trust {
+    background: var(--cream-light);
+    border-block: 1px solid var(--cream-deep);
+  }
+
+  .trust__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem 2rem;
+    padding-block: 1.4rem;
+  }
+
+  .trust__rating {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+  }
+
+  .trust__score {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 2.6rem;
+    line-height: 1;
+    color: var(--maroon);
+  }
+
+  .trust__stars {
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+  }
+
+  .trust__star-ghost {
+    color: var(--cream-deep);
+  }
+
+  .trust__reviews {
+    font-weight: 600;
+    color: var(--charcoal-soft);
+  }
+
+  .trust__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .trust__chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    background: var(--cream);
+    border: 1px solid var(--cream-deep);
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--radius-pill);
+  }
+
+  .trust__icon {
+    width: 1.05rem;
+    height: 1.05rem;
+    color: var(--maroon);
+  }
+
+  @media (max-width: 640px) {
+    .trust__inner {
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .trust__rating {
+      justify-content: center;
+    }
+
+    .trust__chips {
+      justify-content: center;
+    }
+  }
+</style>
